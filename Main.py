@@ -7,6 +7,7 @@ import Bird
 
 pygame.init()
 win = pygame.display.set_mode((1920,1080))
+clock = pygame.time.Clock()
 bg_img = pygame.image.load("space_BG.png")
 bg = pygame.transform.scale(bg_img,(1920, 1080))
 width = 1920
@@ -68,7 +69,7 @@ while True:
     if pygame.sprite.groupcollide(player_group, pipe_group, False, False):
         print("Player hit a pipe!")
     
-    pygame.time.delay(30) #Game speed lower to increase, increas to slow
+    clock.tick(30) #Sets the FPS
     pygame.display.update()
 
     if event.type == QUIT:
